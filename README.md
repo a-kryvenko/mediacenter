@@ -111,7 +111,7 @@ and then login to server again.
 ```shell
 cd ~/
 
-git clone git@github.com:a-kryvenko/mediacenter.git
+git clone https://github.com/a-kryvenko/mediacenter.git
 
 docker compose up -d
 ```
