@@ -90,6 +90,8 @@ services:
     environment:
       - VIRTUAL_HOST=immich.mediacenter.lan
       - VIRTUAL_PORT=2283
+    env_file:
+      - .env
     # extends:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
@@ -143,8 +145,6 @@ services:
       POSTGRES_INITDB_ARGS: '--data-checksums'
     volumes:
       - ${MOUNT_SSD_PATH}/immich/postgres:/var/lib/postgresql/data
-    env_file:
-      - .env
     shm_size: 128mb
     healthcheck:
       disable: false
