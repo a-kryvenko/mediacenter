@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./.docker/nginx-proxy/custom.conf:/etc/nginx/conf.d
+      - ./.docker/nginx-proxy/custom.conf:/etc/nginx/conf.d/custom.conf:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ${MOUNT_SSD_PATH}/nginxproxy/certs:/etc/nginx/certs
       - ${MOUNT_SSD_PATH}/nginxproxy/vhost.d:/etc/nginx/vhost.d
