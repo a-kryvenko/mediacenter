@@ -48,7 +48,7 @@ services:
       - 51413:51413
     volumes:
       - ${MOUNT_SSD_PATH}/transmission:/config
-      - ${MOUNT_HDD_PATH}/Downloads:/downloads
+      - ${MOUNT_HDD_PATH}/Downloads:/data/downloads
     networks:
       - mediacenter_network
 
