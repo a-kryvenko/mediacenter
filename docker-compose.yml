@@ -44,10 +44,13 @@ services:
       - VIRTUAL_PORT=9091
       - PUID=1000
       - PGID=1000
+      - TRANSMISSION_DOWNLOAD_DIR=/data/downloads
+      - TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME=/scripts/wrap_single_file.sh
     ports:
       - 51413:51413
     volumes:
       - ${MOUNT_SSD_PATH}/transmission:/config
+      - .docker/transmission/scripts:/scripts
       - ${MOUNT_HDD_PATH}/Downloads:/data/downloads
     networks:
       - mediacenter_network
